@@ -4,7 +4,7 @@ services:
   - docker
 
 env:
-  DOCKER_COMPOSE_VERSION: 1.8.0
+  DOCKER_COMPOSE_VERSION: 1.23.2
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
@@ -35,25 +35,25 @@ before_install:
 script:
   - docker exec php7.2 php -v
   - docker exec php7.2 sh -c "php -v | grep OPcache"
-  - docker exec php7.2 sh -c "php test/test.php | grep Iyo"
+  - docker exec php7.2 sh -c "php test/test.php | grep Hi"
   - docker exec php7.2 sh -c "echo \"<?php echo ini_get('memory_limit');\" | php | grep 256M"
 
   - docker exec php7.2-dev sh -c "php -v | grep Xdebug"
   - docker exec php7.2-dev composer --version
-  - docker exec php7.2-dev sh -c "php test/test.php | grep Iyo"
+  - docker exec php7.2-dev sh -c "php test/test.php | grep Hi"
   - docker exec php7.2-dev sh -c "echo \"<?php echo ini_get('memory_limit');\" | php | grep 1G"
 
   - docker exec php7.1 php -v
   - docker exec php7.1 sh -c "php -v | grep OPcache"
-  - docker exec php7.1 sh -c "php test/test.php | grep Iyo"
+  - docker exec php7.1 sh -c "php test/test.php | grep Hi"
   - docker exec php7.1 sh -c "echo \"<?php echo ini_get('memory_limit');\" | php | grep 256M"
 
   - docker exec php7.1-dev sh -c "php -v | grep Xdebug"
   - docker exec php7.1-dev composer --version
-  - docker exec php7.1-dev sh -c "php test/test.php | grep Iyo"
+  - docker exec php7.1-dev sh -c "php test/test.php | grep Hi"
   - docker exec php7.1-dev sh -c "echo \"<?php echo ini_get('memory_limit');\" | php | grep 1G"
 
   - docker exec php7.1-front node -v
   - docker exec php7.1-front yarn --version
 
-  - docker exec test_fpm_1 sh -c "curl nginx | grep Iyo"
+  - docker exec test_fpm_1 sh -c "curl nginx | grep Hi"
