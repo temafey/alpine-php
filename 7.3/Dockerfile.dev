@@ -1,4 +1,4 @@
-FROM temafey/alpine-php:7.2
+FROM temafey/alpine-php:7.3
 ARG USER=root
 ARG PASSWORD=root
 ARG COMPOSER_VERSION=1.8.0
